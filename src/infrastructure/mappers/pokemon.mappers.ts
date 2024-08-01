@@ -8,7 +8,7 @@ export class PokemonMapper {
     static pokeApiPokemonToEntity(data: PokeAPIPokemon): Pokemon {
 
         const sprites = PokemonMapper.getSprites(data)
-        const avatar = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-atwork/${data.id}.png`
+        const avatar = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`;
 
         return {
             id: data.id,
