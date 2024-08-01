@@ -1,7 +1,8 @@
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { ActivityIndicator, Button, Text } from 'react-native-paper';
 import { getPokemons } from '../../../actions/pokemons';
 import { useQuery } from '@tanstack/react-query';
+import { PoketballBg } from '../../components/ui/PoketballBg';
 
 export const HomeScreen = () => {
 
@@ -14,22 +15,17 @@ export const HomeScreen = () => {
 
     return (
         <View>
-            <Text
-
-            >
-                Home Screen
-            </Text>
-            {
-                isLoading ? (<ActivityIndicator />) : (
-                    <Button
-                        mode='contained'
-                        onPress={() => console.log('pressed')}
-                    >
-                        Press Me!
-                    </Button>
-                )
-            }
+            <PoketballBg style={styles.imgPosition} />
         </View>
     );
 }
+
+
+const styles = StyleSheet.create({
+    imgPosition: {
+        position: 'absolute',
+        top: -100,
+        right: -100,
+    }
+})
 
