@@ -3,6 +3,7 @@ import { Image, StyleSheet, View } from 'react-native';
 import { Pokemon } from '../../../domain/entities/pokemon';
 import { Card, Text } from 'react-native-paper';
 import { FadeInImage } from '../ui/FadeInImage';
+import { getColorFromImage } from '../../../config/helpers/get-colors';
 
 interface Props {
     pokemon: Pokemon
@@ -11,7 +12,7 @@ interface Props {
 
 export const PokemonCard = ({ pokemon }: Props) => {
     return (
-        <Card style={[ styles.cardContainer ]}>
+        <Card style={[ styles.cardContainer, { backgroundColor: pokemon.color } ]}>
             <Text style={styles.name} variant="bodyLarge" lineBreakMode="middle">
                 {pokemon.name}
                 {'\n#' + pokemon.id}
